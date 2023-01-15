@@ -103,8 +103,12 @@ INPUT extractbb -B cropbox -O fig/okada.pdf
 OUTPUT out/b-thesis_abst.dvi
 INPUT fig/collect-data2.png
 INPUT extractbb -B cropbox -O fig/collect-data2.png
+INPUT fig/willow-garage.png
+INPUT extractbb -B cropbox -O fig/willow-garage.png
 INPUT fig/collect-data.png
 INPUT extractbb -B cropbox -O fig/collect-data.png
+INPUT fig/chart.png
+INPUT extractbb -B cropbox -O fig/chart.png
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/uptex-fonts/jis/upjisr-v.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/uptex-fonts/jis/upjisr-h.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr8.tfm

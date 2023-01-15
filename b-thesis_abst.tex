@@ -17,9 +17,8 @@
     
     \makeatletter
     \doctype{2022年度卒業論文概要}
-    \title{視覚と行動のend-to-end学習により経路追従行動をオンラインで模倣する手法の提案}{(オフラインでデータセットを収集して訓練する手法の提案)}
-    \etitle{A proposal for an online imitation method of path-tracking
-    behavior by end-to-end learning of vision and action}{(Validation of a method to collect and train dataset offline)}
+    \title{視覚と行動のend-to-end学習により\\経路追従行動をオンラインで模倣する手法の提案}{(オフラインでデータセットを収集して訓練する手法の提案)}
+    \etitle{A proposal for an online imitation method of path-tracking behavior\\ by end-to-end learning of vision and action}{(Validation of a method to collect and train dataset offline)}
     
     \author{19C1068\hspace{.5zw}髙橋祐樹}
     \eauthor{Yuuki TAKAHASHI}
@@ -35,35 +34,39 @@
     \supervisor{指導教員：林原靖男 教授}
     
     \section{緒\hspace{2zw}言}%===========================
-    近年, 自律移動ロボットの研究が盛んに行われている. Bojarskiら\cite{bojarski}は人が操作するステアリングの角度をend-to-end学習することで, 自律走行する手法を提案した. また, 岡田ら\cite{si2020-okada}\cite{si2021-okada}(以下｢従来研究｣と称する)により2D-LiDARを用いた自律移動システムの出力をロボットに与えて学習させることで, 経路追従行動をオンラインで模倣する手法を提案し, 実験によりその有効性を確認してきた. しかし, カメラ画像を入力とした学習器の出力のみで自律走行をするためには, ロボットを何周も走行させて学習する必要がある. これでは, 走行中にロボットがコースアウトしないか監視する必要や, 時間がかかるといった問題点がある. そこで, 本研究では, 従来手法を基に, 目標とする経路上及び周辺のデータを一度に収集し, オフラインで訓練する手法を提案する. 提案手法では, 経路上にロボットを配置し, カメラ画像と教師データとなる目標角速度を収集する. それらのデータを基にオフラインで学習を行い, 学習後はカメラ画像を入力とした学習出力により自律移動させることで, 手法の有効性を検証する. 
+    近年, 自律移動ロボットの研究が盛んに行われている. Bojarskiら\cite{bojarski}は人が操作するステアリングの角度をend-to-end学習することで, 自律走行する手法を提案した. また, 岡田ら\cite{si2020-okada}\cite{si2021-okada}(以下｢従来研究｣と称する)により2D-LiDARを用いた自律移動システムの出力を学習させることで, 経路追従行動をオンラインで模倣する手法を提案し, 実験によりその有効性を確認してきた. しかし, カメラ画像を入力とした学習器の出力のみで自律走行をするには, ロボットを何周も走行させて学習する必要がある. これでは, 手間や時間が掛かってしまう. 本研究では, 従来手法を基に目標とする経路上及び周辺のデータを一度に収集し, オフラインで訓練する手法を提案する. 提案手法では, 経路上にロボットを配置し, カメラ画像と教師データとなる目標角速度を収集する. それらのデータを基にオフラインで学習を行い, 学習後はカメラ画像を入力とした学習出力により自律移動させることで, 手法の有効性を検証する. 
     % また, 清岡ら\cite{si2021-kiyooka}により, 経路上だけでなく経路から離れた状態も学習することが, 経路追従行動を模倣する上で有効であることも示されている.
+    
+    \section{従来手法}%===========================
+    従来研究の概要を以下で述べる. 従来研究では, 地図を用いたルールベース制御器の出力を模倣し, 視覚に基づく経路追従行動を獲得した. 従来研究のシステム概要を図\ref{Fig:si2020-okada}に示す. システムでは, LiDAR, オドメトリを入力としたナビゲーションの出力である角速度を学習器とモータ駆動系に与える. ナビゲーションの角速度は, ROSのパッケージであるnavigation\cite{navigation}により計算される. また, 学習器には, カメラ画像を64×48にリサイズした3つのカメラ画像を入力し, ナビゲーションの角速度を出力して, 0.2[s]の周期でend-to-end学習する. 左右のカメラ画像に対する目標角速度には, それぞれ経路に戻るようなオフセットを加える. 学習には, 入力層1, 畳み込み層3, 全結合層2, 出力層1の計7層で構成されたネットワークを用いる. 学習後は, カメラ画像のみを入力とした学習器の出力により走行する. 
 
-    \begin{figure}[!b]
+    \begin{figure}[h]
         \centering
-        \includegraphics[width=0.5\textwidth]{fig/okada.pdf}
+        \includegraphics[keepaspectratio, scale=0.33]{fig/okada.pdf}
         \caption{Systems that imitation learning for map-based navigation from\cite{si2020-okada}}
         \label{Fig:si2020-okada}
     \end{figure}
-    
-    \section{従来手法}%===========================
-    従来研究の概要を以下で述べる. 従来研究では, 地図を用いたルールベース制御器によるナビゲーションの走行を模倣し, 視覚に基づく経路追従行動を獲得した. 従来研究のシステム概要を図\ref{Fig:si2020-okada}に示す. システムでは, LiDAR, オドメトリを入力としたナビゲーションの出力である角速度を学習器とモータ駆動系に与える. ナビゲーションの角速度は, ROSのパッケージであるnavigation\cite{navigation}により計算される. また, 学習器には, カメラ画像を64×48にリサイズした3つのカメラ画像を入力し, ナビゲーションの角速度を出力して, 0.2[s]の周期でend-to-end学習する. 左右のカメラ画像に対する目標角速度には, それぞれ経路に戻るようなオフセットを加える. 学習には, 入力層1, 畳み込み層3, 全結合層2, 出力層1の計7層で構成されたネットワークを用いる. 学習後は, カメラ画像のみを入力とした学習器の出力により走行する. 
 
     \section{提案手法}%===========================
     次に, 従来研究を基にしたオフラインでデータを収集し訓練するする手法を提案する. 図\ref{Fig:collect}にデータの収集方法を示す. 赤色の線である目標経路から平行に離れた座標にロボットを配置する. そして, その座標ごとに目標経路に沿った向きを基準として±5度傾けて, 64×48のカメラ画像(RGB画像)とルールベース制御器によるナビゲーションの出力である角速度をのように収集する. ただし, ロボットの進行方向に対する並進速度は0[m/s]であるが, データセットにはナビゲーションの出力である角速度がロボットに与えられる. このように, ロボットを走行させることなく, 目標経路上及び周辺に配置することで, 一度に大量のデータを収集することができる. その後, 収集したデータを使用してオフラインで学習を行う. 
 
     \begin{figure}[h]
         \centering
-        \includegraphics[width=0.4\textwidth]{fig/collect-data2.png}
+        \includegraphics[width=0.35\textwidth]{fig/collect-data2.png}
         \caption{Method of collecting data around the target route}
         \label{Fig:collect}
     \end{figure}
 
-    \section{シミュレータを用いた実験}%===========================
-    \subsection{実験目的}\mbox{}\\
-    シミュレータ上で実験を行い, 提案手法の有効性を検証する. 
-
+    \section{シミュレータを用いた実験}%=========================== 
     \subsection{実験装置}\mbox{}\\
-    シミュレータにはGazebo\cite{gazebo}のWillow Garage{willow}でに示すコーで一周行う. また, ロボットモデルにはカメラを3つ搭載したTurtlebo3\cite{turtlebot3}を用いた. 
+    シミュレータにはGazebo\cite{gazebo}のWillow Garage{willow}で図\ref{Fig:willow}に示すコースで一周行う. また, ロボットモデルにはカメラを3つ搭載したTurtlebo3\cite{turtlebot3}を用いた. 
+
+    \begin{figure}[!b]
+        \centering
+        \includegraphics[width=0.35\textwidth]{fig/willow-garage.png}
+        \caption{Course to collect data}
+        \label{Fig:willow}
+    \end{figure}
 
     \subsection{実験方法}
     \begin{enumerate}
@@ -80,19 +83,29 @@
     \end{figure}
 
     \subsection{実験結果}\mbox{}\\
-    実験結果を表\ref{tb:result}, lossのグラフをに示す. 4000stepでは成功回数が0/10だったが, 8000step, 10000stepにすることで成功回数が1/10になり, 目標経路を一周することができた. また, からステップ数増やすことで学習が収束していることが確認できる. このことから, 訓練する際にバッチ学習を用いて, ステップ数を増やすことで成功回数が増えることを示せた. 
+    実験結果を表\ref{tb:result}に示す. 4000stepでは成功回数が0/10だったが, 8000step, 10000stepにすることで成功回数が1/10になった. また, 図\ref{Fig:loss}からステップ数増やすことで学習が収束していることが確認できる. このことから, 訓練する際にバッチ学習を用いて, ステップ数を増やすことで成功回数が増えることを示せた. 
 
     \begin{table}[h]
         \centering
+        \scalebox{0.8}{
         \begin{tabular}{|c|c|} \hline
           Experiments & Number of successes \\ \hline
           Exp.1(4000step) & 0/10 \\ \hline
           Exp.2(8000step) & 1/10 \\ \hline
           Exp.3(10000step) & 1/10 \\ \hline
         \end{tabular}
+        }
         \caption{Number of successes in the experiment}
         \label{tb:result}
       \end{table}
+
+    \newpage
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.5\textwidth]{fig/chart.png}
+        \caption{Loss value in the experiments}
+        \label{Fig:loss}
+    \end{figure}
 
     \section{結\hspace{2zw}言}%===========================
     本稿では, 従来から提案する経路追従行動を模倣する手法を基に, オフラインでデータセットを収集して訓練する手法を提案した. そして, 実験により提案手法の有効性を確認した. 
@@ -110,8 +123,8 @@
             \bibitem{si2021-okada}
             岡田 眞也, 清岡 優祐, 春山 健太, 上田 隆一, 林原 靖男: ``視覚と行動のend-to-end学習により経路追従行動をオンラインで模倣する手法の提案-“経路追従行動の修正のためにデータセットを動的に追加する手法の検討'', \textit{計測自動制御学会 SI 部門講演会 SICE-SI2021 予稿集}, pp.1066-1070, 2021.
 
-            \bibitem{si2021-kiyooka}
-            清岡 優祐, 岡田 眞也, 岩井 一輝, 上田 隆一, 林原 靖男: ``視覚と行動のend-to-end学習により経路追従行動をオンラインで模倣する手法の提案''-データセットと生成された経路追従行動の解析'', \textit{計測自動制御学会 SI 部門講演会 SICE-SI2021 予稿集}, pp.1072-1075, 2021.
+            % \bibitem{si2021-kiyooka}
+            % 清岡 優祐, 岡田 眞也, 岩井 一輝, 上田 隆一, 林原 靖男: ``視覚と行動のend-to-end学習により経路追従行動をオンラインで模倣する手法の提案''-データセットと生成された経路追従行動の解析'', \textit{計測自動制御学会 SI 部門講演会 SICE-SI2021 予稿集}, pp.1072-1075, 2021.
 
             \bibitem{navigation}
             ros-planning, navigation リポジトリ\\
