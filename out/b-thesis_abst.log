@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.14159265-p3.8.2-u1.25-190908-2.6 (utf8.uptex) (TeX Live 2019/Debian) (preloaded format=uplatex 2022.12.1)  15 JAN 2023 07:30
+This is e-upTeX, Version 3.14159265-p3.8.2-u1.25-190908-2.6 (utf8.uptex) (TeX Live 2019/Debian) (preloaded format=uplatex 2022.12.1)  15 JAN 2023 11:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -285,32 +285,50 @@ Overfull \hbox (8.53581pt too wide) in paragraph at lines 34--34
 
 LaTeX Font Info:    Font shape `JT2/mc/m/n' will be
 (Font)              scaled to size 6.73553pt on input line 37.
-LaTeX Font Info:    Font shape `JT2/mc/m/n' will be
-(Font)              scaled to size 7.69775pt on input line 59.
-LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
-(Font)              scaled to size 7.69775pt on input line 59.
-LaTeX Font Info:    Font shape `JT2/mc/m/it' will be
-(Font)              scaled to size 7.69775pt on input line 66.
-LaTeX Font Info:    Font shape `JY2/mc/m/it' will be
-(Font)              scaled to size 7.69775pt on input line 66.
-[1
+LaTeX Font Info:    Font shape `JT2/mc/b/n' in size <7> not available
+(Font)              Font shape `JT2/mc/bx/n' tried instead on input line 37.
+LaTeX Font Info:    Font shape `JT2/mc/bx/n' in size <7> not available
+(Font)              Font shape `JT2/gt/m/n' tried instead on input line 37.
+LaTeX Font Info:    Font shape `JT2/gt/m/n' will be
+(Font)              scaled to size 6.73553pt on input line 37.
+LaTeX Font Info:    Font shape `JY2/mc/b/n' in size <7> not available
+(Font)              Font shape `JY2/mc/bx/n' tried instead on input line 37.
+LaTeX Font Info:    Font shape `JY2/mc/bx/n' in size <7> not available
+(Font)              Font shape `JY2/gt/m/n' tried instead on input line 37.
+LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
+(Font)              scaled to size 6.73553pt on input line 37.
+
+LaTeX Warning: Citation `bojarski' on page 1 undefined on input line 37.
 
 
+LaTeX Warning: Citation `si2020-okada' on page 1 undefined on input line 37.
 
-] [2
 
-] (out/b-thesis_abst.aux)
+LaTeX Warning: Citation `si2021-okada' on page 1 undefined on input line 37.
 
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
- ) 
+LaTeX Warning: Citation `si2021-kiyooka' on page 1 undefined on input line 37.
+
+
+Underfull \vbox (badness 5077) has occurred while \output is active []
+
+
+LaTeX Warning: Citation `navigation' on page 1 undefined on input line 40.
+
+File: fig/si2020-okada.png Graphic file (type bmp)
+<fig/si2020-okada.png>
+/home/y-takahashi/tex_lib/adrobo_abst/b-thesis_abst.tex:46: Undefined control sequence.
+<argument> ... for map-based navigation from \cit 
+                                                  {si2020-okada}}}{\the \@te...
+l.46 ...-based navigation from \cit{si2020-okada}}
+                                                   
 Here is how much of TeX's memory you used:
- 2500 strings out of 481765
- 31485 string characters out of 5933692
- 274691 words of memory out of 5000000
- 17900 multiletter control sequences out of 15000+600000
- 543448 words of font info for 76 fonts, out of 8000000 for 9000
+ 2503 strings out of 481765
+ 31538 string characters out of 5933692
+ 274682 words of memory out of 5000000
+ 17903 multiletter control sequences out of 15000+600000
+ 542510 words of font info for 72 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
- 30i,8n,31p,1251b,361s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 30i,8n,31p,1791b,334s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on out/b-thesis_abst.dvi (2 pages, 7952 bytes).
+No pages of output.
