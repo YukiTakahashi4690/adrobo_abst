@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.14159265-p3.8.2-u1.25-190908-2.6 (utf8.uptex) (TeX Live 2019/Debian) (preloaded format=uplatex 2022.12.1)  15 JAN 2023 23:44
+This is e-upTeX, Version 3.14159265-p3.8.2-u1.25-190908-2.6 (utf8.uptex) (TeX Live 2019/Debian) (preloaded format=uplatex 2022.12.1)  16 JAN 2023 20:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -287,8 +287,8 @@ Overfull \hbox (8.53581pt too wide) in paragraph at lines 34--34
 
 LaTeX Font Info:    Font shape `JT2/mc/m/n' will be
 (Font)              scaled to size 6.73553pt on input line 37.
-File: fig/okada.pdf Graphic file (type pdf)
-<fig/okada.pdf>
+File: fig/si2020-okada.png Graphic file (type bmp)
+<fig/si2020-okada.png>
 File: fig/collect-data2.png Graphic file (type bmp)
 <fig/collect-data2.png>
 
@@ -306,34 +306,34 @@ File: fig/collect-data.png Graphic file (type bmp)
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-File: fig/chart.png Graphic file (type bmp)
-<fig/chart.png>
+File: fig/loss.png Graphic file (type bmp)
+<fig/loss.png>
 LaTeX Font Info:    Font shape `JT2/mc/m/n' will be
-(Font)              scaled to size 7.69775pt on input line 116.
+(Font)              scaled to size 7.69775pt on input line 114.
 LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
-(Font)              scaled to size 7.69775pt on input line 116.
+(Font)              scaled to size 7.69775pt on input line 114.
 LaTeX Font Info:    Font shape `JT2/mc/m/it' will be
-(Font)              scaled to size 7.69775pt on input line 123.
+(Font)              scaled to size 7.69775pt on input line 121.
 LaTeX Font Info:    Font shape `JY2/mc/m/it' will be
-(Font)              scaled to size 7.69775pt on input line 123.
+(Font)              scaled to size 7.69775pt on input line 121.
 LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
-(Font)              scaled to size 5.77332pt on input line 133.
+(Font)              scaled to size 5.77332pt on input line 131.
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 7.69775pt on input line 133.
+(Font)              scaled to size 7.69775pt on input line 131.
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 5.77332pt on input line 133.
+(Font)              scaled to size 5.77332pt on input line 131.
 [2] (out/b-thesis_abst.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 2581 strings out of 481765
- 32645 string characters out of 5933692
+ 2580 strings out of 481765
+ 32665 string characters out of 5933692
  275789 words of memory out of 5000000
  17955 multiletter control sequences out of 15000+600000
  548800 words of font info for 97 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
- 30i,9n,31p,926b,438s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 30i,9n,31p,925b,440s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on out/b-thesis_abst.dvi (2 pages, 12396 bytes).
+Output written on out/b-thesis_abst.dvi (2 pages, 12368 bytes).

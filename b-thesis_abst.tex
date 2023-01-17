@@ -34,33 +34,33 @@
     \supervisor{指導教員：林原靖男 教授}
     
     \section{緒\hspace{2zw}言}%===========================
-    近年, 自律移動ロボットの研究が盛んに行われている. Bojarskiら\cite{bojarski}は人が操作するステアリングの角度をend-to-end学習することで, 自律走行する手法を提案した. また, 岡田ら\cite{si2020-okada}(以下｢従来研究｣と称する)は2D-LiDARを用いた自律移動システムの出力を学習させることで, 経路追従行動をオンラインで模倣する手法を提案し, 実験によりその有効性を確認してきた. 本研究では, 従来研究を基に目標経路上及び周辺のデータを一度に収集し, オフラインで訓練する手法を提案する. 訓練後は, カメラ画像を入力とした学習器の出力で自律走行させることで手法の有効性を検証する. 
+    近年, 自律移動ロボットの研究が盛んに行われている. Bojarskiら\cite{bojarski}は人が操作するステアリングの角度をend-to-end学習することで, 自律走行する手法を提案した. また, 岡田ら\cite{si2020-okada}(以下｢従来研究｣と称する)は, 地図を用いたルールベース制御器の出力を模倣することで経路追従行動を獲得した. しかし, 学習器の出力で自律走行させるには, ロボットを何周を走行させる必要があり, 時間や手間がかかる. 本研究では, 従来研究を基にオフラインで目標経路上及び周辺のデータを一度に収集して訓練する手法を提案する. 訓練後は, カメラ画像を入力とした学習器の出力で自律走行させることで手法の有効性を検証する. 
     % しかし, カメラ画像を入力とした学習器の出力で自律走行をするには, ロボットを何周も走行させて学習する必要があり, 手間や時間が掛かる.
     % また, 清岡ら\cite{si2021-kiyooka}により, 経路上だけでなく経路から離れた状態も学習することが, 経路追従行動を模倣する上で有効であることも示されている.
     
     \section{従来手法}%===========================
-    従来研究では, 地図を用いたルールベース制御器の出力を模倣し, 視覚に基づく経路追従行動を獲得した. 図\ref{Fig:si2020-okada}に示すシステムでは, LiDAR, オドメトリを入力としたナビゲーションの出力である角速度を学習器とモータ駆動系に与える. ナビゲーションの角速度は, ROSのパッケージであるnavigation\cite{navigation}により計算される. また, 学習器には, カメラ画像を64×48にリサイズした3つのカメラ画像(RGB画像)を入力し, ナビゲーションの角速度を出力してend-to-end学習する. 左右のカメラ画像に対する角速度には, それぞれ経路に戻るようなオフセットを加える. 学習後は, カメラ画像を入力とした学習器の出力により走行する. 
+    従来研究では, 地図を用いたルールベース制御器の出力を模倣し, 経路追従行動を獲得した. 図\ref{Fig:si2020-okada}に示すシステムでは, LiDAR, オドメトリを入力としたnavigation\cite{navigation}の出力である角速度(以下｢目標角速度｣と称する)を学習器とモータ駆動系に与える. また, 学習器には, カメラ画像を64×48にリサイズした3つのカメラ画像を入力し,目標角速度を出力してend-to-end学習する. 左右のカメラ画像に対する角速度には, それぞれ経路に戻るようなオフセットを加える. 学習後は, カメラ画像を入力とした学習器の出力により走行する. 
 
     \begin{figure}[h]
         \centering
-        \includegraphics[keepaspectratio, scale=0.3]{fig/okada.pdf}
+        \includegraphics[keepaspectratio, scale=0.3]{fig/si2020-okada.png}
         \caption{Systems that imitation learning for map-based navigation from\cite{si2020-okada}}
         \label{Fig:si2020-okada}
     \end{figure}
 
     \section{提案手法}%===========================
-    次に, 従来研究を基にしたオフラインでデータを収集し訓練するする手法を提案する. 図\ref{Fig:collect}にデータの収集方法を示す. ロボットを赤線の目標経路から平行に離れた座標に配置して, その座標ごとに経路に沿った向きを基準に傾けて, カメラ画像とナビゲーションの出力である角速度を図\ref{Fig:collect}のように収集する. このように, ロボットを走行させることなく, 配置することで, 一度に大量のデータを収集することができる. その後, 収集したデータを用いてオフラインで学習を行う. 
+    次に, 従来研究を基にしたオフラインでデータを収集し訓練するする手法を提案する. 図\ref{Fig:collect}にデータの収集方法を示す. ロボットを赤線の目標経路から平行に離れた座標に配置して, その座標ごとに経路に沿った向きを基準に傾けて, カメラ画像と目標角速度を収集する. このように, ロボットを走行させずに配置することで, 一度に大量のデータを収集できる. その後, 収集したデータを用いてオフラインで学習を行う. 
 
     \begin{figure}[h]
         \centering
-        \includegraphics[width=0.3\textwidth]{fig/collect-data2.png}
+        \includegraphics[width=0.35\textwidth]{fig/collect-data2.png}
         \caption{Method of collecting data around the target route}
         \label{Fig:collect}
     \end{figure}
 
+    \newpage
     \section{シミュレータを用いた実験}%=========================== 
-    \subsection{実験装置}\mbox{}\\
-    シミュレータにはGazeboのWillow Garage\cite{willow}を用いて, 図\ref{Fig:willow}に示すコースで一周行う. また, ロボットモデルにはカメラを3つ搭載したTurtlebo3\cite{turtlebot3}を用いた. 
+    \subsection{実験装置}シミュレータにはGazeboのWillow Garage\cite{willow}を用いて, 図\ref{Fig:willow}に示すコースで一周行う. また, ロボットモデルにはカメラを3つ搭載したTurtlebo3\cite{turtlebot3}を用いた. 
 
     \begin{figure}[h]
         \centering
@@ -70,13 +70,12 @@
     \end{figure}
 
     \subsection{実験方法}
-    \begin{enumerate}
-        \item{データ収集フェーズ}\mbox{}\\図\ref{Fig:collect-data}にデータの収集方法を示す. 赤線の目標経路から平行に±0.01, ±0.02, ±0.04, ±0.06, ±0.08, ±0.10, ±0.15, ±0.20, ±0.30[m]離れた座標にロボットを配置する. そして, その座標ごとに経路に沿った向きを基準として±5度傾けて, カメラ画像とナビゲーションの出力である角速度を収集する. 
-        \item{訓練フェーズ}\mbox{}\\データ量及びバッチサイズ7242, バッチ学習で4000step, 8000step, 10000step学習した. 
-        % なお, 4000stepは従来研究において, シミュレータの実験に用いられてきたステップ数であり, 10000stepは従来研究において, 実ロボットの実験に用いられていたステップ数である. 
+    \begin{description}
+        \item[1.データ収集フェーズ]図\ref{Fig:collect-data}にデータの収集方法を示す. 赤線の目標経路から平行に±0.01, ±0.02, ±0.04, ±0.06, ±0.08, ±0.10, ±0.15, ±0.20, ±0.30[m]離れた座標にロボットを配置する. そして, その座標ごとに経路に沿った向きを基準として±5度傾けて, カメラ画像と目標角速度を収集する. 
+        \item[2.訓練フェーズ]データ量及びバッチサイズ7452, オフライン学習の特徴を活かしてバッチ学習で4000step, 8000step, 10000step学習した. なお, 4000stepは従来研究において, シミュレータの実験に用いられてきたステップ数であり, 10000stepは従来研究において, 実ロボットの実験に用いられていたステップ数である. 
         % 従来研究ではオンラインで学習を行うため計算のリソースなどの観点からバッチサイズを8にして, 全てのデータを使用していなかった. しかし, 本研究では
-        \item{テストフェーズ}\mbox{}\\図\ref{Fig:willow}に示したコースで10回走行させる. 経路を一周できた場合を成功とし, 壁に衝突したり, 目標経路から10[m]以上離れたりした場合を失敗とした. 
-    \end{enumerate}
+        \item[3.テストフェーズ]図\ref{Fig:willow}に示したコースで10回走行させる. 経路を3周できた場合を成功とし, 壁に衝突したり, 目標経路から10[m]以上離れたりした場合を失敗とした. 
+    \end{description}
 
     \begin{figure}[h]
         \centering
@@ -85,17 +84,16 @@
         \label{Fig:collect-data}
     \end{figure}
 
-    \subsection{実験結果}\mbox{}\\
-    実験結果を表\ref{tb:result}に示す. 4000stepでは成功回数が0だったが, 8000step, 10000stepでは成功回数が増えた. また, 図\ref{Fig:loss}からステップ数増やすことで学習が収束していることが確認できる. 従って, 訓練する際にバッチ学習を用いて, ステップ数を増やすことで成功回数が増えることを示せた. 
+    \subsection{実験結果}実験結果を表\ref{tb:result}に示す. 4000step, 8000step, 10000step全てで成功回数が5/5であった. また, 図\ref{Fig:loss}から学習が収束していることが確認できる. 従って, オフラインで収集したデータを用いてバッチ学習を行うことで, 経路を周回できることを確認した.  
 
     \begin{table}[h]
         \centering
         \scalebox{0.7}{
         \begin{tabular}{|c|c|} \hline
           Experiments & Number of successes \\ \hline
-          Exp.1(4000step) & 0/10 \\ \hline
-          Exp.2(8000step) & 1/10 \\ \hline
-          Exp.3(10000step) & 1/10 \\ \hline
+          Exp.1(4000step) & 5/5 \\ \hline
+          Exp.2(8000step) & 5/5 \\ \hline
+          Exp.3(10000step) & 5/5 \\ \hline
         \end{tabular}
         }
         \caption{Number of successes in the experiment}
@@ -104,7 +102,7 @@
 
     \begin{figure}[h]
         \centering
-        \includegraphics[width=0.35\textwidth]{fig/chart.png}
+        \includegraphics[width=0.4\textwidth]{fig/loss.png}
         \caption{Loss value in the experiments}
         \label{Fig:loss}
     \end{figure}
@@ -144,7 +142,7 @@
 
             \bibitem{turtlebot3}
             Turtlebot3-robotis emanual.robotis.\\
-            url{https://emanual.robotis.com/docs/.}\\
+            \url{https://emanual.robotis.com/docs/.}\\
             (最終閲覧日 \today)
             
         \end{thebibliography}

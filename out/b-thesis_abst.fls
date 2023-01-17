@@ -98,8 +98,8 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmmib5.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbsy10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy7.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm
-INPUT fig/okada.pdf
-INPUT extractbb -B cropbox -O fig/okada.pdf
+INPUT fig/si2020-okada.png
+INPUT extractbb -B cropbox -O fig/si2020-okada.png
 INPUT fig/collect-data2.png
 INPUT extractbb -B cropbox -O fig/collect-data2.png
 OUTPUT out/b-thesis_abst.dvi
@@ -107,8 +107,8 @@ INPUT fig/willow-garage.png
 INPUT extractbb -B cropbox -O fig/willow-garage.png
 INPUT fig/collect-data.png
 INPUT extractbb -B cropbox -O fig/collect-data.png
-INPUT fig/chart.png
-INPUT extractbb -B cropbox -O fig/chart.png
+INPUT fig/loss.png
+INPUT extractbb -B cropbox -O fig/loss.png
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/uptex-fonts/jis/upjisr-v.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/uptex-fonts/jis/upjisr-h.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr8.tfm

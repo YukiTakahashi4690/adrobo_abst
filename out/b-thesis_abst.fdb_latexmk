@@ -1,11 +1,11 @@
 # Fdb version 3
-["dvipdf"] 1673793889 "out/b-thesis_abst.dvi" "out/b-thesis_abst.pdf" "out/b-thesis_abst" 1673793890
-  "out/b-thesis_abst.dvi" 1673793889 12396 2360ee5f59ef6371c775001fc7909104 "latex"
+["dvipdf"] 1673869172 "out/b-thesis_abst.dvi" "out/b-thesis_abst.pdf" "out/b-thesis_abst" 1673869172
+  "out/b-thesis_abst.dvi" 1673869172 12368 998be12a679b7314ae4b5c171b010ee3 "latex"
   (generated)
   "out/b-thesis_abst.pdf"
-["latex"] 1673793889 "/home/y-takahashi/tex_lib/adrobo_abst/b-thesis_abst.tex" "out/b-thesis_abst.dvi" "b-thesis_abst" 1673793890
+["latex"] 1673869171 "/home/y-takahashi/tex_lib/adrobo_abst/b-thesis_abst.tex" "out/b-thesis_abst.dvi" "b-thesis_abst" 1673869172
   "/etc/texmf/web2c/texmf.cnf" 1669897342 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/y-takahashi/tex_lib/adrobo_abst/b-thesis_abst.tex" 1673793888 10592 b5b4e47a6dad486c34474e275c5cb94a ""
+  "/home/y-takahashi/tex_lib/adrobo_abst/b-thesis_abst.tex" 1673869171 10355 bf338e1c59aa90b5a243b092384efec1 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm" 1246382020 1120 1e8878807317373affa7f7bba4cf2f6a ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy6.tfm" 1246382020 1124 14ccf5552bc7f77ca02a8a402bea8bfb ""
@@ -78,14 +78,14 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1581979058 38841 ce3692aa899bb693b90b87eaa5d4d84e ""
   "/var/lib/texmf/web2c/euptex/uplatex.fmt" 1669897398 10590895 8b96f5b98de13c804e222e9b44648232 ""
   "adrobo_abst.sty" 1673600959 11542 0c09baf7d27c35557cf4bfca588c8fd4 ""
-  "b-thesis_abst.tex" 1673793888 10592 b5b4e47a6dad486c34474e275c5cb94a ""
-  "fig/chart.png" 1673745315 21010 31a46663c7b8661782621ce7e2026637 ""
+  "b-thesis_abst.tex" 1673869171 10355 bf338e1c59aa90b5a243b092384efec1 ""
   "fig/collect-data.png" 1672490807 78036 3cc615e9ce24e1d975332b30af398eee ""
   "fig/collect-data2.png" 1673085252 535575 c74db14197df08d521ab2fd328120638 ""
-  "fig/okada.pdf" 1673751181 73619 4927777aabf1db7d75914842e63cb941 ""
+  "fig/loss.png" 1673817517 19832 f67ff9590d13d251ded28c7b2ea7b8d4 ""
+  "fig/si2020-okada.png" 1673812692 174989 b5ddb0373416766ce7d6564fdd540533 ""
   "fig/willow-garage.png" 1671436481 22879 c4798e7e6eb086d95e1c14151cc6ab85 ""
-  "out/b-thesis_abst.aux" 1673793889 2303 ed2cadd951c4387061be5894adc19a06 "latex"
+  "out/b-thesis_abst.aux" 1673869172 2303 aa4d97b6efe682198f3a3802f8faef6c "latex"
   (generated)
-  "out/b-thesis_abst.dvi"
   "out/b-thesis_abst.log"
+  "out/b-thesis_abst.dvi"
   "out/b-thesis_abst.aux"
