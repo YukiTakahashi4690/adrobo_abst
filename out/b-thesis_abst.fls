@@ -100,9 +100,9 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy7.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm
 INPUT fig/si2020-okada.png
 INPUT extractbb -B cropbox -O fig/si2020-okada.png
+OUTPUT out/b-thesis_abst.dvi
 INPUT fig/collect-data2.png
 INPUT extractbb -B cropbox -O fig/collect-data2.png
-OUTPUT out/b-thesis_abst.dvi
 INPUT fig/willow-garage.png
 INPUT extractbb -B cropbox -O fig/willow-garage.png
 INPUT fig/collect-data.png
