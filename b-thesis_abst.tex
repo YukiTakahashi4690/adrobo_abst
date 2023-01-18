@@ -63,7 +63,7 @@
 
     \begin{figure}[h]
         \centering
-        \includegraphics[width=0.3\textwidth]{fig/willow-garage.png}
+        \includegraphics[width=0.3\textwidth]{fig/willow-path.png}
         \caption{Course to collect data}
         \label{Fig:willow}
     \end{figure}
@@ -71,7 +71,7 @@
     \subsection{実験方法}
     \begin{description}
         \item[1.データ収集フェーズ]図\ref{Fig:collect-data}にデータの収集方法を示す. 赤線の目標経路から平行に±0.01, ±0.02, ±0.04, ±0.06, ±0.08, ±0.10, ±0.15, ±0.20, ±0.30[m]離れた座標にロボットを配置する. そして, その座標ごとに経路に沿った向きを基準として±5度傾けて, カメラ画像と目標角速度を収集する. 
-        \item[2.訓練フェーズ]4000step, 3000step, 2000step学習した. なお, 4000stepは従来研究において, シミュレータの実験に用いられてきたステップ数である. 
+        \item[2.訓練フェーズ]4000step, 2000step学習した. なお, 4000stepは従来研究において, シミュレータの実験に用いられてきたステップ数である. 
         \item[3.テストフェーズ]図\ref{Fig:willow}に示したコースで10個の学習済みモデルを用いて走行させる. 経路を3周できた場合を成功とし, 壁に衝突したり, 目標経路から10[m]以上離れたりした場合を失敗とした. 
     \end{description}
 
@@ -82,16 +82,15 @@
         \label{Fig:collect-data}
     \end{figure}
 
-    \subsection{実験結果}実験結果を表\ref{tb:result}に示す. 4000step, 8000step, 10000step全てで成功回数が5/5であった. また, 図\ref{Fig:loss}から学習が収束していることが確認できる.   
+    \subsection{実験結果}実験結果を表\ref{tb:result}に示す. 4000stepは成功率100\%であるが学習に6分20秒掛かる. しかし, 2000stepは成功率80\%で学習は3分10秒で終了した. また, 図\ref{Fig:loss}から学習が収束していることが確認できる. 
 
     \begin{table}[h]
         \centering
-        \scalebox{0.7}{
+        \scalebox{0.8}{
         \begin{tabular}{|c|c|} \hline
           Experiments & Number of successes \\ \hline
           Exp.1(4000step) & 10/10 \\ \hline
-          Exp.2(3000step) & 9/10 \\ \hline
-          Exp.3(2000step) & 4/6 \\ \hline
+          Exp.2(2000step) & 8/10 \\ \hline
         \end{tabular}
         }
         \caption{Number of successes in the experiment}
@@ -100,7 +99,7 @@
 
     \begin{figure}[h]
         \centering
-        \includegraphics[width=0.4\textwidth]{fig/loss.png}
+        \includegraphics[width=0.4\textwidth]{fig/loss_compe.png}
         \caption{Loss value in the experiments}
         \label{Fig:loss}
     \end{figure}

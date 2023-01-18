@@ -103,12 +103,12 @@ INPUT extractbb -B cropbox -O fig/si2020-okada.png
 OUTPUT out/b-thesis_abst.dvi
 INPUT fig/collect-data2.png
 INPUT extractbb -B cropbox -O fig/collect-data2.png
-INPUT fig/willow-garage.png
-INPUT extractbb -B cropbox -O fig/willow-garage.png
+INPUT fig/willow-path.png
+INPUT extractbb -B cropbox -O fig/willow-path.png
 INPUT fig/collect-data.png
 INPUT extractbb -B cropbox -O fig/collect-data.png
-INPUT fig/loss.png
-INPUT extractbb -B cropbox -O fig/loss.png
+INPUT fig/loss_compe.png
+INPUT extractbb -B cropbox -O fig/loss_compe.png
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/uptex-fonts/jis/upjisr-v.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/uptex-fonts/jis/upjisr-h.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr8.tfm
