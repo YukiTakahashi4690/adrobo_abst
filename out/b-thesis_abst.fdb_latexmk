@@ -1,11 +1,11 @@
 # Fdb version 3
-["dvipdf"] 1674008218 "out/b-thesis_abst.dvi" "out/b-thesis_abst.pdf" "out/b-thesis_abst" 1674008227
-  "out/b-thesis_abst.dvi" 1674008218 12168 42e553c61469f6f7ba2f7eba7898d21f "latex"
+["dvipdf"] 1674066080 "out/b-thesis_abst.dvi" "out/b-thesis_abst.pdf" "out/b-thesis_abst" 1674066081
+  "out/b-thesis_abst.dvi" 1674066080 12264 4f78dfe56b8048721b91e904cf4d6cb9 "latex"
   (generated)
   "out/b-thesis_abst.pdf"
-["latex"] 1674008218 "/home/y-takahashi/tex_lib/adrobo_abst/b-thesis_abst.tex" "out/b-thesis_abst.dvi" "b-thesis_abst" 1674008227
+["latex"] 1674066080 "/home/y-takahashi/tex_lib/adrobo_abst/b-thesis_abst.tex" "out/b-thesis_abst.dvi" "b-thesis_abst" 1674066081
   "/etc/texmf/web2c/texmf.cnf" 1669897342 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/y-takahashi/tex_lib/adrobo_abst/b-thesis_abst.tex" 1674008227 9996 ad12d85089b1ad0536237695776c0cfc ""
+  "/home/y-takahashi/tex_lib/adrobo_abst/b-thesis_abst.tex" 1674066080 10329 ed2c66e4364993945fce5ceded5cf2c9 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm" 1246382020 1120 1e8878807317373affa7f7bba4cf2f6a ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy6.tfm" 1246382020 1124 14ccf5552bc7f77ca02a8a402bea8bfb ""
@@ -78,14 +78,14 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1581979058 38841 ce3692aa899bb693b90b87eaa5d4d84e ""
   "/var/lib/texmf/web2c/euptex/uplatex.fmt" 1669897398 10590895 8b96f5b98de13c804e222e9b44648232 ""
   "adrobo_abst.sty" 1673600959 11542 0c09baf7d27c35557cf4bfca588c8fd4 ""
-  "b-thesis_abst.tex" 1674008227 9996 ad12d85089b1ad0536237695776c0cfc ""
+  "b-thesis_abst.tex" 1674066080 10329 ed2c66e4364993945fce5ceded5cf2c9 ""
   "fig/collect-data.png" 1672490807 78036 3cc615e9ce24e1d975332b30af398eee ""
   "fig/collect-data2.png" 1673085252 535575 c74db14197df08d521ab2fd328120638 ""
   "fig/loss_compe.png" 1674008157 16431 4704b56316e6a8fb79661dd2df262345 ""
   "fig/si2020-okada.png" 1673812692 174989 b5ddb0373416766ce7d6564fdd540533 ""
   "fig/willow-path.png" 1673990362 43158 66df6627a43be80f8a0c59dae81bd315 ""
-  "out/b-thesis_abst.aux" 1674008218 2303 aa4d97b6efe682198f3a3802f8faef6c "latex"
+  "out/b-thesis_abst.aux" 1674066080 2257 feb009d94decd506885f5c6e0d852421 "latex"
   (generated)
-  "out/b-thesis_abst.dvi"
-  "out/b-thesis_abst.aux"
   "out/b-thesis_abst.log"
+  "out/b-thesis_abst.aux"
+  "out/b-thesis_abst.dvi"
