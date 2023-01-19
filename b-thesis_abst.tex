@@ -27,7 +27,7 @@
     
     \makeatother
     
-    \abstract{In this paper, we propose a method of training a robot by collecting data on and near a target path, based on a conventional method of imitation path-following behavior. In the proposed method, the robot is placed on and around the target path and data is collected. Then, the robot is trained off-line using the collected data. After learning, the robot runs according to the output of the trainer using camera images as input. This is performed on a simulator, and the effectiveness of the proposed method is verified through experiments. As a result, it is confirmed that the proposed method can run around the path.}
+    \abstract{In this paper, we propose a method of training a robot by collecting data on and near a target path, based on a conventional method of imitation learning. In the proposed method, the robot is placed on and around the target path and data is collected. Then, the robot is trained off-line using the collected data. After learning, the robot runs according to the output of the trainer using camera images as input. This is performed on a simulator, and the effectiveness of the proposed method is verified through experiments. As a result, it is confirmed that the proposed method can run around the path.}
     
     \keywords{End-to-End Learning, Navigation, Offline}
     
@@ -61,7 +61,7 @@
     \end{figure}
 
     \section{シミュレータを用いた実験}%=========================== 
-    \subsection{実験装置}シミュレータにはGazeboのWillow Garage\cite{willow}を用いて, 図\ref{Fig:willow}に示すコースで一周行う. また, ロボットモデルにはカメラを3つ搭載したTurtlebo3 Waffle Piを用いた. 
+    \subsection{実験装置}シミュレータにはGazeboのWillow Garageを用いて, 図\ref{Fig:willow}に示すコースで行う. また, ロボットモデルにはカメラを3つ搭載したTurtlebo3 Waffle Piを用いた. 
 
     \begin{figure}[h]
         \centering
@@ -84,7 +84,7 @@
         \label{Fig:collect-data}
     \end{figure}
 
-    \subsection{実験結果}実験結果を表\ref{tb:result}に示す. 4000stepは成功率100\%, 6分20秒で学習が終了した. 2000stepは成功率80\%であるが, 学習は3分10秒で終了した. ここで, 学習時のlossを図\ref{Fig:loss}に示す. 図\ref{Fig:loss}から学習が収束していることが確認できる. また, 従来手法が訓練に最低40分程度必要であったのに対して, 大幅に時間を短縮できることを確認した. 
+    \subsection{実験結果}実験結果を表\ref{tb:result}に示す. 4000stepは成功率100\%, 6分20秒で学習が終了した. 2000stepは成功率80\%であるが, 学習は3分10秒で終了した. ここで, 学習時のlossの一例を図\ref{Fig:loss}に示す. 図から学習が収束している様子が確認できる. 因みに, 従来手法が訓練に最低40分程度必要であったのに対して, 本手法は上記のように訓練は6分程度であるため, 大幅に時間を短縮できることを確認した. 
 
     \begin{table}[h]
         \caption{Number of successes in the experiment}
@@ -135,9 +135,9 @@
             % \url{http://gazebosim.org/}\\
             % (最終閲覧日 \today)
 
-            \bibitem{willow}
-            Koenig, Nathan, and Andrew Howard. ”design and use paradigms for gazebo, an open-source multi-robot simulator.”. 2004 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)(IEEE Cat. No. 04CH37566). Vol. 3. IEEE, pp.2149-2154(2004).\\
-            (最終閲覧日 \today)
+            % \bibitem{willow}
+            % Koenig, Nathan, and Andrew Howard. ”design and use paradigms for gazebo, an open-source multi-robot simulator.”. 2004 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)(IEEE Cat. No. 04CH37566). Vol. 3. IEEE, pp.2149-2154(2004).\\
+            % (最終閲覧日 \today)
 
             % \bibitem{turtlebot3}
             % Turtlebot3-robotis emanual.robotis.\\

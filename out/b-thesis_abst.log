@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.14159265-p3.8.2-u1.25-190908-2.6 (utf8.uptex) (TeX Live 2019/Debian) (preloaded format=uplatex 2022.12.1)  19 JAN 2023 03:21
+This is e-upTeX, Version 3.14159265-p3.8.2-u1.25-190908-2.6 (utf8.uptex) (TeX Live 2019/Debian) (preloaded format=uplatex 2022.12.1)  19 JAN 2023 14:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -325,12 +325,12 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 2579 strings out of 481765
- 32669 string characters out of 5933692
- 274786 words of memory out of 5000000
- 17954 multiletter control sequences out of 15000+600000
+ 2578 strings out of 481765
+ 32661 string characters out of 5933692
+ 274783 words of memory out of 5000000
+ 17953 multiletter control sequences out of 15000+600000
  548800 words of font info for 97 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
  30i,9n,31p,964b,440s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on out/b-thesis_abst.dvi (2 pages, 12264 bytes).
+Output written on out/b-thesis_abst.dvi (2 pages, 11840 bytes).
